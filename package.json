@@ -1,0 +1,17 @@
+{
+  "name": "lovable-restaurant-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "KarachiBites Restaurant App (Frontend + Backend)",
+  "scripts": {
+    "dev": "npm --prefix restaurant-hub run dev",
+    "dev:frontend": "npm --prefix restaurant-hub run dev",
+    "dev:backend": "npm --prefix backend run dev",
+    "build": "npm --prefix restaurant-hub run build",
+    "build:dev": "npm --prefix restaurant-hub run build:dev",
+    "preview": "npm --prefix restaurant-hub run preview",
+    "test": "npm --prefix backend test",
+    "seed": "npm --prefix backend run seed",
+    "lint": "npm --prefix restaurant-hub run lint"
+  }
+}
