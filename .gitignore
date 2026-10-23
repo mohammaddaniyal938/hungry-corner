@@ -1,1 +1,13 @@
 .git-backup/
+
+# Local Git backups
+/restaurant-hub-git-backup/
+/restaurant-hub-git-backup-safe/
+/restaurant-hub-dotgit-preserved/
+/taurant-hub-git-backup*
+
+/restaurant-hub-git-metadata-temp/
+
+/restaurant-hub-git-metadata-temp/
+
+/restaurant-hub-git-metadata-temp/
