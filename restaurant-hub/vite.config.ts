@@ -4,6 +4,19 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  plugins: [tanstackStart({ server: { entry: "server" } }), react(), tailwindcss()],
+  base: process.env["GITHUB_ACTIONS"] === "true" ? "/hungry-corner/" : "/",
+  plugins: [
+    tanstackStart({
+      server: { entry: "server" },
+      prerender: {
+        enabled: true,
+        autoStaticPathsDiscovery: true,
+        crawlLinks: true,
+        failOnError: true,
+      },
+    }),
+    react(),
+    tailwindcss(),
+  ],
   resolve: { tsconfigPaths: true },
 });

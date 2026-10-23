@@ -51,7 +51,7 @@ export default function StaffAccessGate({ auth, onReturnToStore, onShowToast }) 
         <div className="mt-6 space-y-2">
           {!auth.user && (
             <a
-              href="/auth?redirect=%2F"
+              href={`${import.meta.env.BASE_URL}auth?redirect=%2F`}
               className="block w-full rounded-xl bg-chili hover:bg-chili-hover text-white font-bold text-sm py-3 transition-colors"
             >
               Sign in

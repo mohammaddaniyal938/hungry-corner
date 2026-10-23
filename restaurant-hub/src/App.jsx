@@ -516,7 +516,7 @@ export default function App() {
         }}
         authUser={auth.user}
         onSignIn={() => {
-          window.location.href = "/auth?redirect=%2F";
+          window.location.href = `${import.meta.env.BASE_URL}auth?redirect=%2F`;
         }}
         onSignOut={async () => {
           await auth.signOut();
