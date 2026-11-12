@@ -8,7 +8,7 @@ Install dependencies in the workspace and frontend folders, then start the servi
 
 ```sh
 npm install
-npm --prefix restaurant-hub install
+npm --prefix frontend install
 npm run dev:backend
 npm run dev:frontend
 ```
@@ -17,7 +17,7 @@ See the backend and frontend package manifests for available scripts.
 
 ## GitHub Pages deployment
 
-The frontend is statically prerendered and deployed from `restaurant-hub/dist/client`
+The frontend is statically prerendered and deployed from `frontend/dist/client`
 by `.github/workflows/deploy-pages.yml`. In the repository's **Settings → Pages**,
 set **Build and deployment → Source** to **GitHub Actions**. The project site URL is
 `https://mohammaddaniyal938.github.io/hungry-corner/`.

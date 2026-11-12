@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - ".github/workflows/deploy-pages.yml"
-      - "restaurant-hub/**"
+      - "frontend/**"
   workflow_dispatch:
 
 permissions:
@@ -30,14 +30,14 @@ jobs:
         with:
           node-version: 22
           cache: npm
-          cache-dependency-path: restaurant-hub/package-lock.json
+          cache-dependency-path: frontend/package-lock.json
 
       - name: Install frontend dependencies
-        working-directory: restaurant-hub
+        working-directory: frontend
         run: npm ci
 
       - name: Build static frontend
-        working-directory: restaurant-hub
+        working-directory: frontend
         run: npm run build
         env:
           VITE_API_URL: ${{ vars.VITE_API_URL }}
@@ -48,7 +48,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: restaurant-hub/dist/client
+          path: frontend/dist/client
 
   deploy:
     environment:

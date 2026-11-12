@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 // Usage: npm run seed            (refuses to run when NODE_ENV=production)
 //        npm run seed -- --force (override)
 const env = require('../config/env');

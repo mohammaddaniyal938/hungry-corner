@@ -41,7 +41,7 @@ const uploadImage = (folder) => (req, res, next) => {
       const result = await toCloudinary(req.file.buffer, folder);
       req.body.image = result.secure_url;
       next();
-    } catch (e) {
+    } catch {
       next(new ApiError(502, 'Image upload failed'));
     }
   });

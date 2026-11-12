@@ -5,7 +5,6 @@ import AdminDashboard from "@/components/Dashboard/AdminDashboard";
 import Toast from "@/components/Toast";
 import { AuthProvider, useAuth } from "@/lib/auth-context.jsx";
 import { apiService } from "@/services/apiService";
-import { fireConfetti } from "@/utils/confetti";
 
 type Product = NonNullable<Awaited<ReturnType<typeof apiService.getProducts>>[number]>;
 
@@ -112,13 +111,6 @@ function AdminDashboardPage() {
   const handleLogout = async () => {
     await auth.signOut();
     navigate({ to: "/admin-login", replace: true });
-  };
-
-  const handleConfirmOrder = async (orderData: Record<string, unknown>) => {
-    const placed = await apiService.placeOrder(orderData);
-    fireConfetti();
-    setOrders((prev) => [placed, ...prev]);
-    showToast(`Order ${placed.orderId} placed successfully! `);
   };
 
   if (auth.loading) {
